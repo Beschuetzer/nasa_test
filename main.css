@@ -1,0 +1,121 @@
+:root{
+   --container_logo_width: 33%;
+   --radial_gradient_color_1:  rgb(132, 154, 180);
+   --radial_gradient_color_2:  rgb(221, 157, 157);
+   --text_color:  rgb(202, 202, 202);
+   --photos_img_dimensions: 470px;
+}
+html{
+    background: url(./starry-sky-998641.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+h2{
+    font-family:  sans-serif;
+    color: white;
+    font-size: 40px;
+    margin: 15px auto;
+}
+a, p{
+    font-family: monospace;
+    color: var(--text_color);
+}
+body{
+    height:  auto;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.header_navigation{
+    background: border-box radial-gradient(var(--radial_gradient_color_1), var(--radial_gradient_color_2));
+    height: 5vh;
+    width: 90%;
+    margin: auto;
+    border: 1px solid rgb(177, 169, 169);
+    position: sticky;
+    top: 0px;
+}
+
+.nav_navigation{
+    height: 100%;
+    display: flex;
+}
+.container_logo {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    align-items:  center;
+    justify-content: space-evenly;
+}
+.container_logo .description {
+    width: 25%;
+}
+.container_logo .description p {
+    word-wrap: break-word;
+    width: 100%;
+    color: black
+}
+.container_logo h2 {
+    color: rgb(34, 35, 39);
+    padding: 0 0 0 0px;
+}
+.container_logo img {
+    opacity: .8;
+    height: 75%;
+}
+.nav_links {
+    position: absolute;
+    right: 0px;
+    list-style-type: none;
+    background-color: black;
+    margin: auto;
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+.nav_link a{
+    text-decoration: none;
+    font-size: 22px;
+}
+
+#background{
+    opacity: .1;
+    margin: auto;
+
+}
+.content {
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+}
+.content section{
+    justify-content: center;
+    align-self: center;
+    justify-items: center;
+    text-align: center;
+}
+.content p {
+    margin: auto;
+    width: 50%;
+    font-size: 18px;
+    text-align: justify;
+}
+.section_photo_div {
+    width: 55%;
+    margin : auto;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--photos_img_dimensions));
+    grid-gap: 15px;
+
+}
+.section_photos img {
+    border: 1px solid wheat;
+    height:  var(--photos_img_dimensions);
+    width:  var(--photos_img_dimensions);
+    object-fit: cover;
+
+}
