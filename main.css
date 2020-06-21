@@ -1,13 +1,15 @@
 :root{
-   --container_logo_width: 33%;
-   --radial_gradient_color_1:  rgb(50, 122, 209);
-   --radial_gradient_color_2:  rgb(52, 139, 44);
+   --nav_left_width: 33%;
+   --radial_gradient_color_1:  rgba(0, 0, 255, var(--nav_alpha_amount));
+   --radial_gradient_color_2:  rgba(255, 255, 255, var(--nav_alpha_amount));
+   --radial_gradient_color_3: rgba(255, 0, 0, var(--nav_alpha_amount));
    --text_color:  rgb(202, 202, 202);
    --photos_img_dimensions: 24.5vw;
-   --header_nav_height: 5vw;
-   --header_nav_link_adjustment_from_top_factor: 28%;
-   --header_nav_logo_paragrah_width_factor: 2;
-   --nasa_alpha_amount: 0.700;
+   --header_nav_height: 7vw;
+   --header_nav_link_adjustment_from_top_factor: 33%;
+   --header_nav_logo_paragrah_width_factor: 4;
+   --nasa_alpha_amount: 0.500;
+   --nav_alpha_amount: 0.150;
 }
 
 a, p{
@@ -27,21 +29,6 @@ h2{
     margin: 15px auto;
     text-align: center;
     vertical-align: middle;
-}
-.nasa_containers{
-    display: flex;
-}
-.nasa_container{
-    background: linear-gradient(90deg, rgba(255, 0, 0, var(--nasa_alpha_amount)), rgba(255, 255, 255, var(--nasa_alpha_amount)));
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-}
-.nasa_container2{
-    background: linear-gradient(90deg, rgba(255, 255, 255, var(--nasa_alpha_amount)), rgba(0, 0, 255, var(--nasa_alpha_amount)));
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
 }
 .section_photo_div {
     margin : auto;
@@ -80,70 +67,88 @@ body{
     box-sizing: border-box;
 }
 .header_navigation{
-    background: border-box radial-gradient(var(--radial_gradient_color_1), var(--radial_gradient_color_2));
     height: var(--header_nav_height);
-    width: 90%;
+    width: 77.125%;
     margin: auto;
     /* border: 1px dashed rgb(226, 226, 226); */
     position: sticky;
     top: 0px;
 }
-.nav_navigation{
-    height: 100%;
-    display: flex;
-}
-.nav_links {
-    position: relative;
+    .nav_navigation{
     background-color: black;
-    right: 0px;
-    top:0px;
-    list-style-type: none;
+    height: 100%;
     display: flex;
-    width: 50%;
-    justify-content: space-evenly;
-    height: 100%;
-}
-.nav_link{
-    max-height: 100%;
-    height: 100%;
-    
-    position: relative;
-    top: var(--header_nav_link_adjustment_from_top_factor);
-    align-self: center;
-}
-.nav_link a{
-    vertical-align: top;
-    text-decoration: none;
-    font-size: calc(var(--header_nav_height)/3);
-    color: yellow;
-    height:100%;    
-    max-height: 100%;
-}
-.container_logo {
-    display: flex;
-    width: 50%;
-    height: 100%;
-    align-items:  center;
-    justify-content: space-around;
-}
+    }
+        .nav_left {
+            background:  linear-gradient(90deg, var(--radial_gradient_color_1), var(--radial_gradient_color_2));
+            display: flex;
+            width: 50%;
+            height: 100%;
+            align-items:  center;
+            justify-content: space-around;
+            
+        }
+            .nav_left p {
+                word-wrap: break-word;
+                width: calc(var(--header_nav_height)* var(--header_nav_logo_paragrah_width_factor));
+                font-size: .7vw;
+                margin: 5%;
+                color: rgb(236, 236, 236);
+                align-self: center;
+                text-align: center;
+            }
+            .nav_left h2 {
+                color: rgb(34, 35, 39);
+                padding: 0 0 0 0px;
+            }
+            .nav_left img {
+                opacity: .8;
+                height: 100%;
+            }
+            .nav_left_nasa_containers{
+                display: flex;
+            }
+            .nav_left_nasa_container{
+                background: linear-gradient(90deg, rgba(255, 0, 0, var(--nasa_alpha_amount)), rgba(255, 255, 255, var(--nasa_alpha_amount)));
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+            .nav_left_nasa_container2{
+                background: linear-gradient(90deg, rgba(255, 255, 255, var(--nasa_alpha_amount)), rgba(0, 0, 255, var(--nasa_alpha_amount)));
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+        .nav_right {
+            background:linear-gradient(90deg, var(--radial_gradient_color_2), var(--radial_gradient_color_3));
 
-.container_logo p {
-    word-wrap: break-word;
-    width: calc(var(--header_nav_height)* var(--header_nav_logo_paragrah_width_factor));
-    font-size: .7vw;
-    margin: 5%;
-    color: rgb(236, 236, 236);
-    align-self: center;
-    text-align: center;
-}
-.container_logo h2 {
-    color: rgb(34, 35, 39);
-    padding: 0 0 0 0px;
-}
-.container_logo img {
-    opacity: .8;
-    height: 100%;
-}
+            position: relative;
+            right: 0px;
+            top:0px;
+            list-style-type: none;
+            display: flex;
+            width: 50%;
+            justify-content: space-evenly;
+            height: 100%;
+        }
+            .nav_right_nav_link{
+                max-height: 100%;
+                height: 100%;
+                
+                position: relative;
+                top: var(--header_nav_link_adjustment_from_top_factor);
+                align-self: center;
+            }
+            .nav_right_nav_link a{
+                vertical-align: top;
+                text-decoration: none;
+                font-size: calc(var(--header_nav_height)/4);
+                color: yellow;
+                height:100%;    
+                max-height: 100%;
+            }
+
 
 /*Add .clearfix class to any container that has floats needing to be contained */
 .clearfix {
@@ -162,6 +167,16 @@ body{
 
 
 @media all and (min-width: 1000px) {
+    :root{
+        --nav_left_width: 33%;
+        --text_color:  rgb(202, 202, 202);
+        --photos_img_dimensions: 24.5vw;
+        --header_nav_height: 5vw;
+        --header_nav_link_adjustment_from_top_factor: 28%;
+        --header_nav_logo_paragrah_width_factor: 2;
+        --nasa_alpha_amount: 0.700;
+     }
+     
     html{
         background: url(./imgs/starry-sky-998641.jpg) no-repeat center center fixed;
         background-size: cover;
@@ -198,7 +213,13 @@ body{
         grid-template-columns: repeat(auto-fill, 36.25%);
         width: 68%;
     }
-    .nav_link{
+    .header_navigation{
+        width: 90%;
+    }
+    .nav_right_nav_link{
         align-self:center;
+    }
+    .nav_right_nav_link a {
+        font-size: calc(var(--header_nav_height)/3);
     }
 }
