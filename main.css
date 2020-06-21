@@ -4,7 +4,8 @@
    --radial_gradient_color_2:  rgb(52, 139, 44);
    --text_color:  rgb(202, 202, 202);
    --photos_img_dimensions: 24.5vw;
-   --header_nav_height: 2.5vw;
+   --header_nav_height: 5vw;
+   --header_nav_link_adjustment_from_top_factor: 28%;
 }
 
 a, p{
@@ -47,9 +48,7 @@ html{
 
 h1 {
     font-family:  sans-serif;
-    font-size: var(--header_nav_height); 
-    align-self: center;
-    margin: 1% 2.5% 0 0;
+    font-size: calc(var(--header_nav_height)); 
 }
 body{
     height:  auto;
@@ -61,7 +60,7 @@ body{
 }
 .header_navigation{
     background: border-box radial-gradient(var(--radial_gradient_color_1), var(--radial_gradient_color_2));
-    height: 2.5vw;
+    height: var(--header_nav_height);
     width: 90%;
     margin: auto;
     /* border: 1px dashed rgb(226, 226, 226); */
@@ -73,8 +72,8 @@ body{
     display: flex;
 }
 .nav_links {
-    position: absolute;
-    background-color: white;
+    position: relative;
+    background-color: black;
     right: 0px;
     top:0px;
     list-style-type: none;
@@ -84,27 +83,30 @@ body{
     height: 100%;
 }
 .nav_link{
-    align-self: flex-end;
-    background-color: grey;
+    max-height: 100%;
+    height: 100%;
+    
+    position: relative;
+    top: var(--header_nav_link_adjustment_from_top_factor);
+    align-self: center;
+    background-color: green;
 }
 .nav_link a{
+    vertical-align: top;
     text-decoration: none;
     font-size: 1.75vw;
     color: yellow;
-    background-color: orange;
     height:100%;    
+    max-height: 100%;
 }
 .container_logo {
     display: flex;
-    width: 33%;
+    width: 50%;
     height: 100%;
     align-items:  center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
-.description {
-    width: 100%;
-    display: flex;
-}
+
 .container_logo p {
     word-wrap: break-word;
     width: 10vw;
@@ -171,14 +173,17 @@ body{
         font-size: 18px;
     }
     .section_photo_div {
-        grid-gap: .5vw;
-        width: 65%;
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 38%);
+        width: 68%;
     }
     .section_photos img {
-      
+        margin: auto;
+        height: calc(var(--photos_img_dimensions));
+        width: calc(var(--photos_img_dimensions));
     } 
     .nav_link{
         align-self:center;
-
     }
 }
