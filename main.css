@@ -163,7 +163,7 @@ body{
 
 @media all and (min-width: 1000px) {
     html{
-        background: url(./starry-sky-998641.jpg) no-repeat center center fixed;
+        background: url(./imgs/starry-sky-998641.jpg) no-repeat center center fixed;
         background-size: cover;
     }
     h2{
