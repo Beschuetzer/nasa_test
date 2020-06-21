@@ -1,23 +1,55 @@
 :root{
    --container_logo_width: 33%;
-   --radial_gradient_color_1:  rgb(132, 154, 180);
-   --radial_gradient_color_2:  rgb(221, 157, 157);
+   --radial_gradient_color_1:  rgb(50, 122, 209);
+   --radial_gradient_color_2:  rgb(52, 139, 44);
    --text_color:  rgb(202, 202, 202);
-   --photos_img_dimensions: 470px;
+   --photos_img_dimensions: 24.5vw;
+   --header_nav_height: 2.5vw;
 }
-html{
-    background: url(./starry-sky-998641.jpg) no-repeat center center fixed;
-    background-size: cover;
-}
-h2{
-    font-family:  sans-serif;
-    color: white;
-    font-size: 40px;
-    margin: 15px auto;
-}
+
 a, p{
     font-family: monospace;
     color: var(--text_color);
+}
+h2{
+    font-size: 2.5vw;
+    color: yellow;
+    margin: 15px auto;
+    text-align: center;
+}
+
+
+.section_photo_div {
+    margin : auto;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 25%);
+    grid-gap: .5vw;
+    width: 100%;
+}
+.section_photos img{
+    height: calc(var(--photos_img_dimensions));
+    width: calc(var(--photos_img_dimensions));
+    border: 1px solid wheat;    
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+}
+.content p {
+    width: 77%;
+    text-align: justify;
+    margin: auto;
+}
+
+html{
+    background: radial-gradient(#000, #012);
+}
+
+h1 {
+    font-family:  sans-serif;
+    font-size: var(--header_nav_height); 
+    align-self: center;
+    margin: 1% 2.5% 0 0;
 }
 body{
     height:  auto;
@@ -29,32 +61,58 @@ body{
 }
 .header_navigation{
     background: border-box radial-gradient(var(--radial_gradient_color_1), var(--radial_gradient_color_2));
-    height: 5vh;
+    height: 2.5vw;
     width: 90%;
     margin: auto;
-    border: 1px solid rgb(177, 169, 169);
+    /* border: 1px dashed rgb(226, 226, 226); */
     position: sticky;
     top: 0px;
 }
-
 .nav_navigation{
     height: 100%;
     display: flex;
 }
-.container_logo {
+.nav_links {
+    position: absolute;
+    background-color: white;
+    right: 0px;
+    top:0px;
+    list-style-type: none;
     display: flex;
     width: 50%;
+    justify-content: space-evenly;
+    height: 100%;
+}
+.nav_link{
+    align-self: flex-end;
+    background-color: grey;
+}
+.nav_link a{
+    text-decoration: none;
+    font-size: 1.75vw;
+    color: yellow;
+    background-color: orange;
+    height:100%;    
+}
+.container_logo {
+    display: flex;
+    width: 33%;
     height: 100%;
     align-items:  center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
-.container_logo .description {
-    width: 25%;
-}
-.container_logo .description p {
-    word-wrap: break-word;
+.description {
     width: 100%;
-    color: black
+    display: flex;
+}
+.container_logo p {
+    word-wrap: break-word;
+    width: 10vw;
+    font-size: .7vw;
+    margin: 5%;
+    color: rgb(236, 236, 236);
+    align-self: center;
+    text-align: left;
 }
 .container_logo h2 {
     color: rgb(34, 35, 39);
@@ -64,58 +122,63 @@ body{
     opacity: .8;
     height: 75%;
 }
-.nav_links {
-    position: absolute;
-    right: 0px;
-    list-style-type: none;
-    background-color: black;
-    margin: auto;
-    display: flex;
-    width: 50%;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
+
+/*Add .clearfix class to any container that has floats needing to be contained */
+.clearfix {
+    zoom: 1;
 }
-.nav_link a{
-    text-decoration: none;
-    font-size: 22px;
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after{
+    clear: both;
 }
 
-#background{
-    opacity: .1;
-    margin: auto;
 
-}
-.content {
-    justify-content: center;
-    align-content: center;
-    align-self: center;
-}
-.content section{
-    justify-content: center;
-    align-self: center;
-    justify-items: center;
-    text-align: center;
-}
-.content p {
-    margin: auto;
-    width: 50%;
-    font-size: 18px;
-    text-align: justify;
-}
-.section_photo_div {
-    width: 55%;
-    margin : auto;
-    justify-content: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, var(--photos_img_dimensions));
-    grid-gap: 15px;
 
-}
-.section_photos img {
-    border: 1px solid wheat;
-    height:  var(--photos_img_dimensions);
-    width:  var(--photos_img_dimensions);
-    object-fit: cover;
 
+
+@media all and (min-width: 1000px) {
+    html{
+        background: url(./starry-sky-998641.jpg) no-repeat center center fixed;
+        background-size: cover;
+    }
+    h2{
+        font-family:  sans-serif;
+        color: white;
+        font-size: 2.5vw;
+    }
+
+    #background{
+        opacity: .1;
+        margin: auto;
+    }
+    .content {
+        justify-content: center;
+        align-content: center;
+        align-self: center;
+    }
+    .content section{
+        justify-content: center;
+        align-self: center;
+        justify-items: center;
+        text-align: center;
+    }
+    .content p {
+        margin: auto;
+        width: 50%;
+        font-size: 18px;
+    }
+    .section_photo_div {
+        grid-gap: .5vw;
+        width: 65%;
+    }
+    .section_photos img {
+      
+    } 
+    .nav_link{
+        align-self:center;
+
+    }
 }
