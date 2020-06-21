@@ -3,13 +3,13 @@
    --radial_gradient_color_1:  rgba(0, 0, 255, var(--nav_alpha_amount));
    --radial_gradient_color_2:  rgba(255, 255, 255, var(--nav_alpha_amount));
    --radial_gradient_color_3: rgba(255, 0, 0, var(--nav_alpha_amount));
-   --text_color:  rgb(202, 202, 202);
+   --text_color:  rgba(202, 202, 202, 0.787);
    --photos_img_dimensions: 24.5vw;
    --header_nav_height: 7vw;
    --header_nav_link_adjustment_from_top_factor: 33%;
    --header_nav_logo_paragrah_width_factor: 4;
    --nasa_alpha_amount: 0.500;
-   --nav_alpha_amount: 0.150;
+   --nav_alpha_amount: 0.250;
 }
 
 a, p{
@@ -25,7 +25,7 @@ h1 {
 }
 h2{
     font-size: 2.5vw;
-    color: yellow;
+    color: rgba(255, 255, 0, 0.794);
     margin: 15px auto;
     text-align: center;
     vertical-align: middle;
@@ -42,7 +42,7 @@ h2{
     margin: auto;
     height: calc(var(--photos_img_dimensions));
     width: calc(var(--photos_img_dimensions));
-    border: 1px solid wheat;    
+    border: 1px solid rgba(245, 222, 179, 0.842);    
     object-fit: cover;
     max-width: 100%;
     max-height: 100%;
@@ -54,7 +54,7 @@ h2{
 }
 
 html{
-    background: radial-gradient(#000, #012);
+    background: black;
 }
 
 
@@ -135,7 +135,6 @@ body{
             .nav_right_nav_link{
                 max-height: 100%;
                 height: 100%;
-                
                 position: relative;
                 top: var(--header_nav_link_adjustment_from_top_factor);
                 align-self: center;
@@ -143,8 +142,8 @@ body{
             .nav_right_nav_link a{
                 vertical-align: top;
                 text-decoration: none;
-                font-size: calc(var(--header_nav_height)/4);
-                color: yellow;
+                font-size: calc(var(--header_nav_height)/4.8);
+                color: rgba(255, 255, 0, 0.568);
                 height:100%;    
                 max-height: 100%;
             }
