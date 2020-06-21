@@ -6,29 +6,53 @@
    --photos_img_dimensions: 24.5vw;
    --header_nav_height: 5vw;
    --header_nav_link_adjustment_from_top_factor: 28%;
+   --header_nav_logo_paragrah_width_factor: 2;
+   --nasa_alpha_amount: 0.700;
 }
 
 a, p{
     font-family: monospace;
     color: var(--text_color);
 }
+h1 {
+    font-family:  sans-serif;
+    font-size: calc(var(--header_nav_height));
+    align-self: center;
+    vertical-align: top;
+    margin:auto;
+}
 h2{
     font-size: 2.5vw;
     color: yellow;
     margin: 15px auto;
     text-align: center;
+    vertical-align: middle;
 }
-
-
+.nasa_containers{
+    display: flex;
+}
+.nasa_container{
+    background: linear-gradient(90deg, rgba(255, 0, 0, var(--nasa_alpha_amount)), rgba(255, 255, 255, var(--nasa_alpha_amount)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.nasa_container2{
+    background: linear-gradient(90deg, rgba(255, 255, 255, var(--nasa_alpha_amount)), rgba(0, 0, 255, var(--nasa_alpha_amount)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
 .section_photo_div {
     margin : auto;
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 25%);
+    grid-template-columns: repeat(auto-fill, 25.7%);
     grid-gap: .5vw;
     width: 100%;
 }
 .section_photos img{
+    margin: auto;
     height: calc(var(--photos_img_dimensions));
     width: calc(var(--photos_img_dimensions));
     border: 1px solid wheat;    
@@ -46,10 +70,7 @@ html{
     background: radial-gradient(#000, #012);
 }
 
-h1 {
-    font-family:  sans-serif;
-    font-size: calc(var(--header_nav_height)); 
-}
+
 body{
     height:  auto;
 }
@@ -89,12 +110,11 @@ body{
     position: relative;
     top: var(--header_nav_link_adjustment_from_top_factor);
     align-self: center;
-    background-color: green;
 }
 .nav_link a{
     vertical-align: top;
     text-decoration: none;
-    font-size: 1.75vw;
+    font-size: calc(var(--header_nav_height)/3);
     color: yellow;
     height:100%;    
     max-height: 100%;
@@ -109,12 +129,12 @@ body{
 
 .container_logo p {
     word-wrap: break-word;
-    width: 10vw;
+    width: calc(var(--header_nav_height)* var(--header_nav_logo_paragrah_width_factor));
     font-size: .7vw;
     margin: 5%;
     color: rgb(236, 236, 236);
     align-self: center;
-    text-align: left;
+    text-align: center;
 }
 .container_logo h2 {
     color: rgb(34, 35, 39);
@@ -122,7 +142,7 @@ body{
 }
 .container_logo img {
     opacity: .8;
-    height: 75%;
+    height: 100%;
 }
 
 /*Add .clearfix class to any container that has floats needing to be contained */
@@ -175,14 +195,9 @@ body{
     .section_photo_div {
         justify-content: center;
         display: grid;
-        grid-template-columns: repeat(auto-fill, 38%);
+        grid-template-columns: repeat(auto-fill, 36.25%);
         width: 68%;
     }
-    .section_photos img {
-        margin: auto;
-        height: calc(var(--photos_img_dimensions));
-        width: calc(var(--photos_img_dimensions));
-    } 
     .nav_link{
         align-self:center;
     }
